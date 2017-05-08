@@ -6,7 +6,7 @@ package section5;
 public class MethodOverloading {
 
     private static double calcFeetAndInchesToCentimeters(int feet, double inches) {
-        if(!(feet >= 0 && inches >= 0 && inches <= 12)) {
+        if(feet < 0 || (inches < 0 || inches > 12)) {
             return -1;
         }
         else {
@@ -31,5 +31,8 @@ public class MethodOverloading {
     public static void main(String[] args) {
         System.out.println(calcFeetAndInchesToCentimeters(1, 4));
         System.out.println(calcFeetAndInchesToCentimeters(38));
+        System.out.println(calcFeetAndInchesToCentimeters(-11, 4));
+        System.out.println(calcFeetAndInchesToCentimeters(6, 43));
+
     }
 }
