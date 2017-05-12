@@ -50,4 +50,29 @@ public class L39Account {
     public void setCustomerPhone(String customerPhone) {
         this.customerPhone = customerPhone;
     }
+
+    public void deposit(double amount) {
+        if(amount > 0) {
+            balance += amount;
+            System.out.println("Deposited $" + amount + " successfully.");
+        }
+
+    }
+
+    public void withdraw(double amount) {
+        if(balance - amount >= 0) {
+            balance -= amount;
+            System.out.println("Withdrawn $" + amount + " successfully. Balance = $" + getBalance());
+        }
+        else {
+
+            System.out.println("Insufficient funds, only $" + getBalance() + " available.");
+        }
+    }
+
+    public static void main(String[] args) {
+        L39Account account1 = new L39Account();
+        account1.deposit(100);
+        account1.withdraw(50);
+    }
 }
