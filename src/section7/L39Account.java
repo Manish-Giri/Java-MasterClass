@@ -11,6 +11,22 @@ public class L39Account {
     private String customerEmail;
     private String customerPhone;
 
+    // constructors
+    public L39Account() {
+        System.out.println("Default constructor called.");
+    }
+
+    public L39Account(String number, double balance, String customerName, String customerEmail, String customerPhone) {
+        System.out.println("Parameterized constructor called.");;
+        this.number = number;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.customerPhone = customerPhone;
+    }
+
+
+
     public String getNumber() {
         return number;
     }
@@ -71,7 +87,8 @@ public class L39Account {
     }
 
     public static void main(String[] args) {
-        L39Account account1 = new L39Account();
+        //L39Account account1 = new L39Account();
+        L39Account account1 = new L39Account("666", 0, "John Doe", "johndoe@gmail.com", "555-5555");
         account1.deposit(100);
         account1.withdraw(50);
     }
