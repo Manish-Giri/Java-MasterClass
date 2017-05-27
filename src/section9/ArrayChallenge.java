@@ -12,11 +12,11 @@ public class ArrayChallenge {
         int[] result = Arrays.copyOf(array, array.length);
         int temp = 0;
         // sort
-        for(int i = 0; i < result.length-1; i++) {
-            for (int j = 0; j < (result.length - i)- 1; j++) {
-                if(result[j] > result[j+1]) {
-                    temp = result[j+1];
-                    result[j+1] = result[j];
+        for(int i = 0; i < result.length; i++) {
+            for (int j = 1; j < result.length - i; j++) {
+                if(result[j-1] > result[j]) {
+                    temp = result[j-1];
+                    result[j-1] = result[j];
                     result[j] = temp;
                 }
             }
