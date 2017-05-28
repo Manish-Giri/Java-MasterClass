@@ -19,4 +19,15 @@ public class L57 {
             System.out.println((i+1) + ". " + groceryList.get(i));
         }
     }
+
+    public void modifyGroceryItem(int position, String item) {
+        groceryList.set(position, item);
+        System.out.println("Grocery item " + (position+1) + " has been modified.");
+    }
+
+    public String removeGroceryItem(int position) {
+        String removed = groceryList.get(position);
+        groceryList.remove(position);
+        return removed;
+    }
 }
