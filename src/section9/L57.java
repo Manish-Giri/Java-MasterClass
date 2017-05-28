@@ -30,4 +30,12 @@ public class L57 {
         groceryList.remove(position);
         return removed;
     }
+
+    public String findItem(String item) {
+        int pos = groceryList.indexOf(item);
+        if(pos >= 0) {
+            return groceryList.get(pos);
+        }
+        return null;
+    }
 }
