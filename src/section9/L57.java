@@ -20,22 +20,38 @@ public class L57 {
         }
     }
 
-    public void modifyGroceryItem(int position, String item) {
+    public void modifyGroceryItem(String newItem) {
+        int pos = findItem(newItem);
+        if(pos >= 0) {
+            modifyGroceryItem(pos, newItem);
+        }
+    }
+
+    private void modifyGroceryItem(int position, String item) {
         groceryList.set(position, item);
         System.out.println("Grocery item " + (position+1) + " has been modified.");
     }
 
-    public String removeGroceryItem(int position) {
+    public void removeGroceryItem(String item) {
+        int pos = findItem(item);
+        if(pos >= 0) {
+            removeGroceryItem(pos);
+        }
+    }
+
+    private String removeGroceryItem(int position) {
         String removed = groceryList.get(position);
         groceryList.remove(position);
         return removed;
     }
 
-    public String findItem(String item) {
-        int pos = groceryList.indexOf(item);
-        if(pos >= 0) {
-            return groceryList.get(pos);
-        }
-        return null;
+    public int findItem(String item) {
+        return groceryList.indexOf(item);
+
+    }
+
+    public static void main(String[] args) {
+        L57 obj = new L57();
+
     }
 }
