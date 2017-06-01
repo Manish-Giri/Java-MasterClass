@@ -31,9 +31,21 @@ public class Branch {
 
     public boolean addCustomerTransaction(String customerName, double amount) {
         Customer existingCustomer = findCustomer(customerName);
-        if(existingCustomer != null) {
+        if (existingCustomer != null) {
             existingCustomer.addTransaction(amount);
+            return true;
         }
+
+        return false;
+    }
+
+    private Customer findCustomer(String customerName) {
+        for(Customer customer: customers) {
+            if(customer.getName().equals(customerName)) {
+                return customer;
+            }
+        }
+        return null;
     }
 
 }
