@@ -14,4 +14,14 @@ public class Bank {
         this.name = name;
         this.branches = new ArrayList<>();
     }
+
+    public boolean addBranch(String branchName) {
+        if(findBranch(branchName) == null) {
+            this.branches.add(branchName);
+            return true;
+        }
+        return false;
+    }
+
+    
 }
