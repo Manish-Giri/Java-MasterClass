@@ -12,9 +12,9 @@ public class L39Account {
     private String customerPhone;
 
     // constructors
-    public L39Account() {
+    /*public L39Account() {
         System.out.println("Default constructor called.");
-    }
+    }*/
 
     public L39Account(String number, double balance, String customerName, String customerEmail, String customerPhone) {
         System.out.println("Parameterized constructor called.");;
